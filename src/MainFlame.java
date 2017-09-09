@@ -28,7 +28,7 @@ class MainFlame extends JFrame implements ActionListener{
 	String date = sdf.format(cal.getTime());
 	*/
 	public static void main(String args[]){
-		MainFlame frame = new MainFlame("“ú•ñXV");
+		MainFlame frame = new MainFlame("æ—¥å ±æ›´æ–°");
 		frame.setVisible(true);
 	}
 
@@ -45,17 +45,17 @@ class MainFlame extends JFrame implements ActionListener{
 
 		//datetext = new JTextField(date, 10);
 
-		selectbutton = new JButton("‘I‘ğ");
+		selectbutton = new JButton("é¸æŠ");
 		selectbutton.addActionListener(this);
 		selectbutton.setActionCommand("select");
 
-		renewbutton = new JButton("XV");
+		renewbutton = new JButton("æ›´æ–°");
 		renewbutton.addActionListener(this);
 		renewbutton.setActionCommand("renew");
-		renewbutton.setEnabled(false);//ƒtƒHƒ‹ƒ_‘I‚Î‚È‚¢‚ÆXV‚Å‚«‚È‚¢
+		renewbutton.setEnabled(false);//ãƒ•ã‚©ãƒ«ãƒ€ã‚’é¸æŠã—ãªã„ã¨ã€æ›´æ–°ãŒã§ããªã„
 		
 		pathlabel = new JLabel();
-		pathlabel.setText("ƒtƒHƒ‹ƒ_êŠ:");
+		pathlabel.setText("ãƒ•ã‚©ãƒ«ãƒ€å ´æ‰€");
 		
 		
 		n.add(pathlabel);
@@ -71,8 +71,8 @@ class MainFlame extends JFrame implements ActionListener{
 
 	public void actionPerformed(ActionEvent e){
 		String cmd = e.getActionCommand();
-		if(cmd.equals("select")){//ƒtƒHƒ‹ƒ_‚ğ‘I‘ğ‚·‚éB
-			JFileChooser filechooser = new JFileChooser("c://");
+		if(cmd.equals("select")){//ãƒ•ã‚©ãƒ«ãƒ€ã‚’é¸æŠã™ã‚‹
+			JFileChooser filechooser = new JFileChooser("C://");
 			filechooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 			
 			int selected = filechooser.showSaveDialog(this);
@@ -85,11 +85,13 @@ class MainFlame extends JFrame implements ActionListener{
 
 		if(cmd.equals("renew")){
 			//label.setText(datetext.getText());
-			//ƒ{ƒ^ƒ“‰Ÿ‰º
+			//ãƒœã‚¿ãƒ³æŠ¼ä¸‹æ™‚
 			System.out.println("pressed!");
-			//FileRead a  = new FileRead();
-
-			//System.out.println("file print");
+			FileHelper a  = new FileHelper();
+			a.FRead("test");
+			//a.combine(pathlabel.getText());
+			System.out.println("file print");
+			System.out.println(pathlabel.getText());
 		}
 	}
 }
